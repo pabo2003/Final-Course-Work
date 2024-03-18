@@ -54,32 +54,39 @@ public class BoardImpl implements Board {
     @Override
     public void updateMove(int col, Piece move) {
         pieces[col][findNextAvailableSpot(col)] = move;
-        if (pieces[col] == null) {
 
-        }
-        /*for (int i = 0; i < pieces[col].length; i++) {
+
+
+       /* for (int i = 0; i <pieces[col].length ; i++) {
             if (pieces[col][i] == Piece.EMPTY) {
-                pieces[col][i] = move;
+                pieces[col][i]= move;
             }
         }*/
+
     }
 
     @Override
     public Winner findWinner() {
         for (int i = 0; i < pieces.length; i++) {
-            for (int j = 0; j < pieces[i].length-3; j++) { //out of bound ek yanna
-                if (pieces[i][j] != Piece.EMPTY && pieces[i][j] == pieces[i][j+1] && pieces[i][j] == pieces[i][j+2] && pieces[i][j] == pieces[i][j+3]){
-                    return new Winner(pieces[i][j],i,j,i,j+3); //1 eken pata mul anke ,anthima anke
+            for (int j = 0; j < pieces[i].length - 3; j++) {
+                if (pieces[i][j] != Piece.EMPTY && pieces[i][j] == pieces[i][j + 1] && pieces[i][j] == pieces[i][j + 2] && pieces[i][j] == pieces[i][j + 3]) {
+                    return new Winner(pieces[i][j], i, j,i, j + 3);
                 }
+
             }
+
         }
+
         for (int i = 0; i < pieces.length-3; i++) {
-            for (int j = 0; j < pieces[i].length; j++) {
-                if (pieces[i][j] != Piece.EMPTY && pieces[i][j] == pieces[i+1][j] && pieces[i][j] == pieces[i+2][j] && pieces[i][j] == pieces[i+3][j]) {
-                    return new Winner(pieces[i][j],i,j,i+3,j);
+            for (int j = 0; j <pieces[i].length; j++) {
+                if (pieces[i][j] != Piece.EMPTY && pieces[i][j] == pieces[i+1][j] && pieces[i][j] == pieces[i+2][j] && pieces[i][j] == pieces[i+3][j] ) {
+                    return new Winner(pieces[i][j], i, j,i+3, j );
                 }
             }
         }
+
         return new Winner(Piece.EMPTY);
     }
-}
+
+    }
+
