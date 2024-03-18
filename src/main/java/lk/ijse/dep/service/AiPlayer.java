@@ -7,8 +7,8 @@ public class AiPlayer extends Player {
     public void movePiece(int col) {
 
         do {
-            col = (int) ((Math.random() * Board.NUM_OF_COLS));
-        } while (!board.isLegalMove(5-0));
+            col = (int) ((Math.random() * 6));
+        } while (!board.isLegalMove(col));
 
         board.updateMove(col, Piece.GREEN);
         board.getBoardUI().update(col, false);
