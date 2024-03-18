@@ -55,14 +55,11 @@ public class BoardImpl implements Board {
     public void updateMove(int col, Piece move) {
         pieces[col][findNextAvailableSpot(col)] = move;
 
+    }
 
-
-       /* for (int i = 0; i <pieces[col].length ; i++) {
-            if (pieces[col][i] == Piece.EMPTY) {
-                pieces[col][i]= move;
-            }
-        }*/
-
+    @Override
+    public void updateMove(int col, int row, Piece move) {
+        pieces[col][row] = move;
     }
 
     @Override
