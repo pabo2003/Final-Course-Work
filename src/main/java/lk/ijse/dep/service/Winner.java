@@ -28,7 +28,7 @@ public class Winner {
         return winningPiece;
     }
 
-    public void setWinningPiece(Piece winningPiece) {
+    public void setWinningPiece(Piece winningPiece)  {
         this.winningPiece = winningPiece;
     }
 

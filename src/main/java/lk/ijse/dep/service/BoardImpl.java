@@ -30,7 +30,7 @@ public class BoardImpl implements Board {
     }
 
     @Override
-    public boolean isLegalMove(int col) { //ewan collom eke hiskotu tiyanawd balano
+    public boolean isLegalMove(int col) {
         for (int i = 0; i < pieces[col].length; i++) {
             if (pieces[col][i] == Piece.EMPTY) {
                 return true;
@@ -40,7 +40,7 @@ public class BoardImpl implements Board {
     }
 
     @Override
-    public boolean existLegalMoves() { //his kotu thiyenawda balanawa
+    public boolean existLegalMoves() {
         for (int i = 0; i < pieces.length; i++) {
             for (int j = 0; j < pieces[i].length; j++) {
                 if (pieces[i][j] == Piece.EMPTY) {

@@ -11,7 +11,7 @@ public class AiPlayer extends Player {
     public void movePiece(int col) {
 
         int x = colChosser();
-        if (x== -1){
+        if (x == -1){
             do {
 
                 int range = 6;
@@ -45,7 +45,6 @@ public class AiPlayer extends Player {
                 int row = board.findNextAvailableSpot(i);
                 board.updateMove(i,Piece.GREEN);
                 if (board.findWinner().getWinningPiece() == Piece.GREEN) {
-
                     board.updateMove(i, row, Piece.EMPTY);
                     return i;
                 }
