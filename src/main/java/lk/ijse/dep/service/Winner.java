@@ -2,11 +2,11 @@ package lk.ijse.dep.service;
 
 public class Winner {
 
-    public Piece winningPiece;
-    public int col1;
-    public int row1;
-    public int col2;
-    public int row2;
+    private Piece winningPiece;
+    private int col1;
+    private int row1;
+    private int col2;
+    private int row2;
 
     public Winner(Piece winningPiece) {
         this.winningPiece = winningPiece;
